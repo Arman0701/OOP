@@ -23,7 +23,9 @@ class Shiritori {
     }
 
     restart(){
-
+        this.words.length = 0;
+        this.gameOver = false;
+        return "Game restarted!"
     }
 }
 
@@ -34,3 +36,12 @@ console.log(game.play('namak'));    // [ 'arman', 'namak' ]
 console.log(game.play('karkut'));   // [ 'arman', 'namak', 'karkut' ]
 console.log(game.play('tari'));     // [ 'arman', 'namak', 'karkut', 'tari' ]
 console.log(game.play('qar'));      // Game is over!
+
+console.log(game.words);            // [ 'arman', 'namak', 'karkut', 'tari' ]
+
+console.log(game.restart());        // "Game restarted!"
+console.log(game.words);            // []
+
+console.log(game.play("hostess"));  // ["hostess"]
+console.log(game.play("stash"));    // ["hostess", "stash"]
+console.log(game.play("hostess"));  // 'Game is over!'
